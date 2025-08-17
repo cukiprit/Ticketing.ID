@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('layout_lokasi', function (Blueprint $table) {
             $table->id();
             $table->foreignId('event_id')->constrained('events')->onDelete('cascade');
-            $table->string('jenis', 100);
-            $table->json('layout_tenant');
-            $table->bigInteger('kapasitas_total')->default(0);
+
+            $table->string('section');
+            $table->string('row');
+            $table->string('number');
+
+            $table->decimal('harga', 16, 2)->default(0);
+            $table->enum('status', ['available', 'booked', 'blocked'])->default('available');
             $table->timestamps();
         });
     }

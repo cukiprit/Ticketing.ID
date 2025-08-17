@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->string('token')->unique()->after('id')->nullable();
             $table->foreignId('tenant_id')->constrained('tenants')->onDelete('cascade');
             $table->foreignId('event_id')->constrained('events')->onDelete('cascade');
             $table->foreignId('layout_tempat_id')->constrained('layout_lokasi')->onDelete('cascade');
-            $table->json('booking_tempat');
             $table->decimal('total', 16, 2);
             $table->enum('status', ['pending', 'confirmed', 'expired', 'cancelled'])->default('pending');
             $table->dateTime('tenggat_pembayaran');

@@ -2,26 +2,23 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\LayoutLokasi;
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function index()
     {
-        $layouts = LayoutLokasi::with('event')->whereHas('event')->get();
+        $events = Event::with('layoutLokasi')->has('layoutLokasi')->get();
 
         // dd($layouts);
-        return view('event.index', compact('layouts'));
+        return view('event.index', compact('events'));
     }
 
     public function show($id)
     {
-        $layout = LayoutLokasi::with('event')->findOrFail($id);
+        $event = Event::with('layoutLokasi')->findOrFail($id);
 
-        return view('event.show', [
-            'layout' => $layout,
-            'layoutLokasi' => $layout->layout_tenant
-        ]);
+        return view('event.show', compact('event'));
     }
 }
