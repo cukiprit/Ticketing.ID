@@ -34,6 +34,21 @@ cd event-organizer
 
 ---
 
+---
+
+Admin page
+
+```
+/admin/login
+```
+
+```
+admin@gmail.com
+password
+```
+
+---
+
 ## Perhatian
 
 Pastikan pada file .env terdapat variabel berikut:
