@@ -30,6 +30,7 @@ Sistem ini merupakan aplikasi **Event Organizer** berbasis **Laravel 10** yang m
 ```bash
 git clone https://github.com/username/event-organizer.git
 cd event-organizer
+```
 
 ---
 
