@@ -38,6 +38,7 @@ cd event-organizer
 
 Pastikan pada file .env terdapat variabel berikut:
 
+```
 APP_NAME="Event Organizer"
 APP_URL=http://localhost:8000
 
@@ -63,3 +64,4 @@ MAIL_PASSWORD=null
 MAIL_ENCRYPTION=null
 MAIL_FROM_ADDRESS="admin@ticketing.com"
 MAIL_FROM_NAME="${APP_NAME}"
+```
